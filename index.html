@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="dist/jsonp.js"></script>
+  <script>
+    jsonp({
+      url: 'https://api.asilu.com/geo/',
+      callbackParamName: 'callback', // 不填默认此字段为jsonp
+      param: {  // 非必填
+        // channel: 'huawei' 
+      },
+      timeout: 3000  //默认为3000，不传超时时间就是3s
+    }).then((res) => {
+      write(JSON.stringify(res))
+      /*
+        res: {
+          err: '', // err一般只有为timeout的情况
+          data: {} //jsonp返回的数据
+        }
+      */
+    })
+
+    function write (r) {
+      setTimeout(function(){
+        document.write(r)
+      }, 100)
+    }
+  </script>
+</body>
+</html>

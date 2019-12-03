@@ -1,0 +1,23 @@
+{
+  "name": "jsonp",
+  "version": "1.0.0",
+  "description": "jsonp",
+  "main": "dist/jsonp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hjdshu/jsonp.git"
+  },
+  "author": "hjdshu",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
