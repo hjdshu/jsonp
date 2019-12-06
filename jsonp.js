@@ -12,12 +12,10 @@ module.exports = function (options) {
   var callbackParamName = options.callbackParamName
   var timeout = options.timeout
   return new Promise(function (resolve) {
-    var time = new Date().getTime()
     var callbacked = false
     var jsonpCallbackName = 'JSONP_WINDOW_FUNC' + randomString()
     var setInt = setTimeout(function () {
       if (!callbacked) {
-        console.log('请求超时:' + (new Date().getTime() - time))
         callbacked = true
         resolve({
           err: 'timeout'
